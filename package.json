@@ -1,0 +1,27 @@
+{
+  "name": "@isaacfrank/contracts",
+  "version": "0.0.1",
+  "description": "Solidity helper contracts",
+  "homepage": "https://zikyfranky.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zikyfranky/"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "keywords": [
+    "solidity",
+    "helper",
+    "smart contracts"
+  ],
+  "author": "Isaac Frank",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  }
+}
