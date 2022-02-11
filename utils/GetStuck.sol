@@ -19,6 +19,10 @@ contract GetStuck {
     /// @param receiver The address of who would receive the stuck eth
     function getStuckETH(address receiver) public virtual {
         uint256 amount = address(this).balance;
-        payable(receiver).call{value: amount}("");
+        (bool success, bytes memory data) = payable(receiver).call{
+            value: amount
+        }("");
+
+        require(success, "transfer failed");
     }
 }
