@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.11;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -24,9 +24,7 @@ contract GetStuck is Ownable {
     /// @param receiver The address of who would receive the stuck eth
     function getStuckETH(address receiver) public virtual onlyOwner {
         uint256 amount = address(this).balance;
-        (bool success, bytes memory data) = payable(receiver).call{
-            value: amount
-        }("");
+        (bool success, ) = payable(receiver).call{value: amount}("");
 
         require(success, "transfer failed");
     }
